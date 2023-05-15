@@ -25,7 +25,7 @@ export default function Card({
           <Balancer>{title}</Balancer>
         </h2>
         <div className="prose-sm -mt-2 leading-normal text-gray-500 md:prose">
-          <Balancer>
+          <Balancer ratio={0}>
             <ReactMarkdown
               components={{
                 a: ({ node, ...props }) => (

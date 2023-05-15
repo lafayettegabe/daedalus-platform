@@ -7,17 +7,17 @@ import Footer from "@/components/layout/footer";
 import { Suspense } from "react";
 
 export const metadata = {
-  title: "Precedent - Building blocks for your Next.js project",
+  title: "Daedalus Institute",
   description:
-    "Precedent is the all-in-one solution for your Next.js project. It includes a design system, authentication, analytics, and more.",
+    "Daedalus Institute aims to provide a environment for research and development of new technologies.",
   twitter: {
     card: "summary_large_image",
-    title: "Precedent - Building blocks for your Next.js project",
+    title: "Daedalus Institute",
     description:
-      "Precedent is the all-in-one solution for your Next.js project. It includes a design system, authentication, analytics, and more.",
-    creator: "@steventey",
+      "Daedalus Institute aims to provide a environment for research and development of new technologies.",
+    creator: "@soaresgabe",
   },
-  metadataBase: new URL("https://precedent.dev"),
+  metadataBase: new URL("https://www.daedalus-institute.com/"),
   themeColor: "#FFF",
 };
 
