@@ -3,10 +3,9 @@ import Balancer from "react-wrap-balancer";
 import { DEPLOY_URL } from "@/lib/constants";
 import { Github, Twitter } from "@/components/shared/icons";
 import WebVitals from "@/components/home/web-vitals";
-import ComponentGrid from "@/components/home/component-grid";
-import Image from "next/image";
 import { nFormatter } from "@/lib/utils";
 import { Linkedin } from "lucide-react";
+import ArgusSystem from "@/components/home/ArgusSystem";
 
 export default async function Home() {
   const { stargazers_count: stars } = await fetch(
@@ -80,11 +79,7 @@ export default async function Home() {
             title={title}
             description={description}
             demo={
-              title === "Argus System" ? (
-                <ComponentGrid />
-              ) : (
-                demo
-              )
+              demo
             }
             large={large}
           />
@@ -96,15 +91,29 @@ export default async function Home() {
 
 const features = [
   {
-    title: "Argus System",
+    title: "",
     description:
-      "A panopticon system built on top of the Daedalus platform, using the latest embedded technologies.",
+      "A security system built on top of the Daedalus platform, using the latest embedded technologies.",
+    demo: <ArgusSystem />,
     large: true,
   },
   {
-    title: "Performance first",
+    title: "Drones",
     description:
-      "High quality streaming and recording video.",
+      "Drones projects.",
     demo: <WebVitals />,
+  },
+  {
+    title: "Internship Program",
+    description:
+      "We are searching for researchers to join our team.",
+    demo: <WebVitals />,
+  },
+  {
+    title: "Internship Program",
+    description:
+      "We are searching for researchers to join our team.",
+    demo: <WebVitals />,
+    large: true,
   },
 ];
