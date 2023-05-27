@@ -28,7 +28,7 @@ export function useAuth() {
             };
         
             try {
-                console.log('Adding user to Firestore database...');
+                console.log('Accessing Firestore database...');
                 const usersCollectionRef = collection(db, 'users');
 
                 // Check if the user exists in the Firestore database
