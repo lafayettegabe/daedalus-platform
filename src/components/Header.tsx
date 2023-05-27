@@ -11,23 +11,6 @@ const Header: React.FC = () => {
   const { user } = useAuth();
   const router = useRouter();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.pageYOffset > 0) {
-        setScroll(true);
-      } else {
-        setScroll(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-    const mobile = window.innerWidth < 768;
-
   return (
     <header
       className={`text-white py-4 px-8 flex justify-between items-center fixed top-0 left-0 right-0 z-50 transition-all duration-200 ease-in-out border-b-1 border-blue-200 shadow-lg
@@ -39,19 +22,11 @@ const Header: React.FC = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* If on top 'Daedalus Institute' if scrolled down, just the D */}
         
-        {!mobile ? (
             <h1 className="text-2xl font-bold tracking-tight flex items-center cursor-pointer" onClick={() => {router.push('/')}}>
                 <span className="text-blue-600 text-3xl transition-all duration-300 ease-in-out" style={{ transform: !scroll ? 'scale(1)' : 'scale(1.7)' }}>D</span>
                 <span className="hidden md:block transition-all duration-500 ease-in-out" style={{ transform: !scroll ? 'translateX(0)' : 'translateX(50%)', opacity: !scroll ? 1 : 0 }}>aedalus Institute</span>
             </h1>
-        ) : (
-            <h1 className="text-2xl font-bold tracking-tight flex items-center cursor-pointer" onClick={() => {router.push('/')}}>
-                <span className="text-blue-600 text-3xl transition-all duration-500 ease-in-out" style={{ transform: scroll ? 'scale(1.5)' : 'scale(2)' }}>D</span>
-            </h1>
-        )}
-
-        {/* If on top, show the nav links, if scrolled down, show the logo */}
-        {!mobile ? (
+        
             <nav className="hidden md:block">
                 <ul className="flex items-center">
                     <li className="mx-4 cursor-pointer transition-all duration-300 ease-in-out hover:text-blue-600">
@@ -71,12 +46,7 @@ const Header: React.FC = () => {
                     </li>
                 </ul>
             </nav>
-        ) : (
-            <h1 className="text-2xl font-bold tracking-tight flex items-center cursor-pointer">
-                <span className="text-blue-600 text-3xl transition-all duration-500 ease-in-out" style={{ transform: scroll ? 'scale(1.5)' : 'scale(2)' }}>D</span>
-            </h1>
-        )}
-      
+        
         {user ? (
           <Profile User={user} />
         ) : (
