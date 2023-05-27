@@ -27,6 +27,10 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+}
+
 .DropdownMenuContent,
 .DropdownMenuSubContent {
   min-width: 100px;
