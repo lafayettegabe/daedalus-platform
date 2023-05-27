@@ -11,6 +11,21 @@ const Header: React.FC = () => {
   const { user } = useAuth();
   const router = useRouter();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 0) {
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <header
       className={`text-white py-4 px-8 flex justify-between items-center fixed top-0 left-0 right-0 z-50 transition-all duration-200 ease-in-out border-b-1 border-blue-200 shadow-lg

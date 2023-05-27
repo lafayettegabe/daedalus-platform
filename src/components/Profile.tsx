@@ -66,7 +66,7 @@ export const Profile: React.FC<IProfileProps> = (props) => {
           sideOffset={5}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          ref={contentRef}
+          
         >
 
           <DropdownMenu.Sub>
