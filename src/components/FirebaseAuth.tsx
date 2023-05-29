@@ -2,16 +2,23 @@
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../Firebase';
-import { useAuth } from './useAuth';
+
+interface User {
+  uid: string;
+  nome: string;
+  email: string;
+  subscriptionStatus: boolean;
+  imageUrl: string;
+}
 
 const FirebaseAuth: React.FC = () => {
   const [user] = useAuthState(auth);
   const googleAuth = new GoogleAuthProvider();
-  useAuth();
 
   const login = async () => {
-    
+    console.log('Logging in...')
     await signInWithPopup(auth, googleAuth);
+    console.log('Logged in as: ', auth.currentUser);
   };
 
   return (

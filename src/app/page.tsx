@@ -1,8 +1,6 @@
-import { useAuthState } from 'react-firebase-hooks/auth';
-import Header from '../components/Header';
-import { auth } from '../../Firebase';
 
 export default function Home() {
+
   return (
     <main>
       <div>

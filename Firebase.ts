@@ -1,5 +1,3 @@
-// Import the functions you need from the SDKs you need
-// firestore
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAnalytics } from "firebase/analytics";

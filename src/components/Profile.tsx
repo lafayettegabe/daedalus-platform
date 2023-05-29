@@ -8,10 +8,10 @@ import { useRouter } from "next/navigation";
 interface IProfileProps {
   User: {
     uid: string;
-    nome: string;
-    email: string;
-    subscriptionStatus: boolean;
-    imageUrl: string;
+    displayName: string | null;
+    email: string | null;
+    photoURL: string | null;
+    phoneNumber: string | null;
   } | null;
 }
 
@@ -48,10 +48,10 @@ export const Profile: React.FC<IProfileProps> = (props) => {
           ref={triggerRef}
         >
           <h2 className="text-lg font-normal text-zinc-300">
-            {props.User?.nome}
+            {props.User?.displayName || "Guest"}
           </h2>
           <Image
-            src={props.User?.imageUrl || "https://lh3.googleusercontent.com/a/AAcHTtdvDzsonOKvdYrssf-CEy-GGGQU-zGQlt4KT-3t=s96-c"}
+            src={props.User?.photoURL || "https://lh3.googleusercontent.com/a/AAcHTtdvDzsonOKvdYrssf-CEy-GGGQU-zGQlt4KT-3t=s96-c"}
             alt="profile picture"
             width={40}
             height={40}

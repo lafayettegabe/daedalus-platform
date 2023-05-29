@@ -2,13 +2,14 @@
 import { useRouter } from 'next/navigation';
 import FirebaseAuth from './FirebaseAuth';
 import { useEffect, useState } from 'react';
-import { useAuth } from './useAuth';
 import { Profile } from './Profile';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../../Firebase';
 
 
 const Header: React.FC = () => {
   const [scroll, setScroll] = useState(false);
-  const { user } = useAuth();
+  const [user] = useAuthState(auth);
   const router = useRouter();
 
   useEffect(() => {

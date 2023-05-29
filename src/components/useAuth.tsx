@@ -1,3 +1,4 @@
+/*
 'use client';
 import { useState, useEffect } from 'react';
 import { auth, db } from '../../Firebase' // Initialize Firebase auth and Firestore instances
@@ -65,3 +66,4 @@ export function useAuth() {
 
   return { user, loading };
 }
+*/
