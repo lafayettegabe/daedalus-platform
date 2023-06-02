@@ -18,16 +18,15 @@ export async function GET(request: Request) {
         if (userData?.subscriptionStatus === true) {
             // User has subscriptionStatus equal to true, perform additional checks or actions
             console.log('User has subscription');
-            return NextResponse.json({ hasSubscription: true }, { status: 200 }); // status: 200 means OK
+            return NextResponse.json({ hasSubscription: true, request });
         } else {
             // User does not have subscriptionStatus equal to true
             console.log('User does not have subscription');
-            return NextResponse.json({ hasSubscription: false }, { status: 200 }); // status: 200 means OK
+            return NextResponse.json({ hasSubscription: false });
         }
     } else {
-        console.log(uid, userRef, userDoc)
         console.log('User not found');
-        return NextResponse.json({ error: 'User not found' }, { status: 404 }); // status: 404 means Not Found
+        return NextResponse.json({ error: 'User not found' });
     }
 }
 
