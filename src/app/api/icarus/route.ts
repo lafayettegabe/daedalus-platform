@@ -8,7 +8,7 @@ export async function GET(request: Request) {
         headers: {
             'Content-Type': 'application/json'
         }
-    }).then(res => res.json());
-    
+    })
+
     return NextResponse.json({ message }, { status: 200 });
 }
