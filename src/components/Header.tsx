@@ -57,7 +57,7 @@ const Header: React.FC = () => {
                     </li>
                     <li className="mx-4 cursor-pointer transition-all duration-300 ease-in-out hover:text-blue-600">
                         <a onClick={() => {router.push('/dev')}}>
-                          Dev
+                          Students
                         </a>
                     </li>
                 </ul>
